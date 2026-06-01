@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Secret Life of Pets</title>
+    <meta
+      name="description"
+      content="A local pet activity dashboard for profiles, routines, and daily logs."
+    >
+    <link rel="stylesheet" href="assets/styles.css">
+    <script type="module" src="src/app.js"></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead__copy">
+        <p class="eyebrow">Household dashboard</p>
+        <h1>Secret Life of Pets</h1>
+        <p id="currentSummary" class="summary">
+          Quiet house. Full report.
+        </p>
+        <div id="petSwitcher" class="pet-switcher" aria-label="Select active pet"></div>
+      </div>
+      <figure class="masthead__art">
+        <img src="assets/pets-apartment.png" alt="Illustration of a dog and cat in a sunny apartment living room">
+        <figcaption>Original project artwork</figcaption>
+      </figure>
+    </header>
+
+    <main class="app-layout">
+      <section class="status-section" aria-labelledby="statusTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Now watching</p>
+          <h2 id="statusTitle">Current Status</h2>
+        </div>
+
+        <div class="profile-line">
+          <span id="petBadge" class="pet-badge"></span>
+          <div>
+            <strong id="petName"></strong>
+            <span id="petContext"></span>
+          </div>
+        </div>
+
+        <div class="metric-grid" aria-label="Pet metrics">
+          <article class="metric">
+            <span>Mood</span>
+            <strong id="moodMetric"></strong>
+          </article>
+          <article class="metric">
+            <span>Energy</span>
+            <strong id="energyMetric"></strong>
+          </article>
+          <article class="metric">
+            <span>Nap bank</span>
+            <strong id="napMetric"></strong>
+          </article>
+          <article class="metric">
+            <span>Clue score</span>
+            <strong id="clueMetric"></strong>
+          </article>
+        </div>
+
+        <div class="routine-list">
+          <h3>Routine</h3>
+          <ul id="routineList"></ul>
+        </div>
+      </section>
+
+      <section class="log-section" aria-labelledby="logTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Activity log</p>
+          <h2 id="logTitle">Add Entry</h2>
+        </div>
+
+        <form id="activityForm" class="activity-form">
+          <label>
+            Activity
+            <select id="activityType" name="activityType">
+              <option value="Patrol">Patrol</option>
+              <option value="Snack search">Snack search</option>
+              <option value="Nap">Nap</option>
+              <option value="Zoomies">Zoomies</option>
+              <option value="Toy audit">Toy audit</option>
+              <option value="Window watch">Window watch</option>
+            </select>
+          </label>
+
+          <label>
+            Intensity
+            <input id="intensity" name="intensity" type="range" min="1" max="5" value="3">
+          </label>
+
+          <label>
+            Note
+            <input id="activityNote" name="activityNote" type="text" maxlength="90" placeholder="Sofa cushions rearranged">
+          </label>
+
+          <button type="submit">Add Entry</button>
+        </form>
+
+        <div class="actions">
+          <button id="showActive" type="button" class="is-active">Active Pet</button>
+          <button id="showAll" type="button">All Pets</button>
+          <button id="resetData" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="timeline-section" aria-labelledby="timelineTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Latest clues</p>
+          <h2 id="timelineTitle">Timeline</h2>
+        </div>
+        <ol id="timeline" class="timeline"></ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Secret Life of Pets</span>
+      <span>v93.0</span>
+    </footer>
+  </body>
+</html>
