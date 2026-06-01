@@ -24,6 +24,7 @@ GitHub Pages URL: `https://ec92009.github.io/SecretLifeOfPets/`
 ├── package.json
 ├── assets/
 │   ├── pets-apartment.png
+│   ├── skateboard-dogs-hero.jpg
 │   └── styles.css
 └── src/
     └── app.js
@@ -33,4 +34,5 @@ GitHub Pages URL: `https://ec92009.github.io/SecretLifeOfPets/`
 
 - No package install is required for the current app.
 - `assets/pets-apartment.png` is an original generated bitmap created for this project. It does not depict or reference franchise characters.
+- `assets/skateboard-dogs-hero.jpg` is a user-provided hero image added for this project.
 - Activity data is stored locally in the browser and can be reset from the app.
