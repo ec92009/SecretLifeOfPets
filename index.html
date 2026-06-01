@@ -8,30 +8,44 @@
       name="description"
       content="A local pet activity dashboard for profiles, routines, and daily logs."
     >
-    <link rel="stylesheet" href="assets/styles.css">
-    <script type="module" src="src/app.js"></script>
+    <link rel="stylesheet" href="assets/styles.css?v=4">
+    <script type="module" src="src/app.js?v=4"></script>
   </head>
   <body>
     <header class="masthead">
       <div class="masthead__copy">
-        <p class="eyebrow">Household dashboard</p>
+        <p class="eyebrow" data-i18n="dashboardEyebrow">Household dashboard</p>
         <h1>Secret Life of Pets</h1>
         <p id="currentSummary" class="summary">
           Quiet house. Full report.
         </p>
-        <div id="petSwitcher" class="pet-switcher" aria-label="Select active pet"></div>
+        <div class="masthead__tools">
+          <div id="petSwitcher" class="pet-switcher" aria-label="Select active pet"></div>
+          <div class="language-switcher" aria-label="Select language">
+            <button type="button" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" data-lang="es" aria-pressed="false">SP</button>
+            <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+          </div>
+          <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+            <span data-i18n="themeDark">Dark</span>
+          </button>
+          <button id="helpButton" class="help-button" type="button" title="Open help">
+            <span aria-hidden="true">?</span>
+            <span class="visually-hidden">Open help</span>
+          </button>
+        </div>
       </div>
       <figure class="masthead__art">
-        <img src="assets/skateboard-dogs-hero.jpg" alt="Illustration of two black and white dogs riding a skateboard down a San Francisco street">
-        <figcaption>San Francisco skate patrol</figcaption>
+        <img src="assets/skateboard-dogs-hero.jpg" alt="Photo of Olivia in front with Bruno just behind her on a San Francisco street">
+        <figcaption>Olivia up front, Bruno close behind</figcaption>
       </figure>
     </header>
 
     <main class="app-layout">
       <section class="status-section" aria-labelledby="statusTitle">
         <div class="section-heading">
-          <p class="eyebrow">Now watching</p>
-          <h2 id="statusTitle">Current Status</h2>
+          <p class="eyebrow" data-i18n="statusEyebrow">Now watching</p>
+          <h2 id="statusTitle" data-i18n="statusTitle">Current Status</h2>
         </div>
 
         <div class="profile-line">
@@ -44,72 +58,72 @@
 
         <div class="metric-grid" aria-label="Pet metrics">
           <article class="metric">
-            <span>Mood</span>
+            <span data-i18n="moodLabel">Mood</span>
             <strong id="moodMetric"></strong>
           </article>
           <article class="metric">
-            <span>Energy</span>
+            <span data-i18n="energyLabel">Energy</span>
             <strong id="energyMetric"></strong>
           </article>
           <article class="metric">
-            <span>Nap bank</span>
+            <span data-i18n="napLabel">Nap bank</span>
             <strong id="napMetric"></strong>
           </article>
           <article class="metric">
-            <span>Clue score</span>
+            <span data-i18n="clueLabel">Clue score</span>
             <strong id="clueMetric"></strong>
           </article>
         </div>
 
         <div class="routine-list">
-          <h3>Routine</h3>
+          <h3 data-i18n="routineTitle">Routine</h3>
           <ul id="routineList"></ul>
         </div>
       </section>
 
       <section class="log-section" aria-labelledby="logTitle">
         <div class="section-heading">
-          <p class="eyebrow">Activity log</p>
-          <h2 id="logTitle">Add Entry</h2>
+          <p class="eyebrow" data-i18n="activityEyebrow">Activity log</p>
+          <h2 id="logTitle" data-i18n="addEntryTitle">Add Entry</h2>
         </div>
 
         <form id="activityForm" class="activity-form">
           <label>
-            Activity
+            <span data-i18n="activityLabel">Activity</span>
             <select id="activityType" name="activityType">
-              <option value="Patrol">Patrol</option>
-              <option value="Snack search">Snack search</option>
-              <option value="Nap">Nap</option>
-              <option value="Zoomies">Zoomies</option>
-              <option value="Toy audit">Toy audit</option>
-              <option value="Window watch">Window watch</option>
+              <option value="Patrol" data-activity="Patrol">Patrol</option>
+              <option value="Snack search" data-activity="Snack search">Snack search</option>
+              <option value="Nap" data-activity="Nap">Nap</option>
+              <option value="Zoomies" data-activity="Zoomies">Zoomies</option>
+              <option value="Toy audit" data-activity="Toy audit">Toy audit</option>
+              <option value="Window watch" data-activity="Window watch">Window watch</option>
             </select>
           </label>
 
           <label>
-            Intensity
+            <span data-i18n="intensityLabel">Intensity</span>
             <input id="intensity" name="intensity" type="range" min="1" max="5" value="3">
           </label>
 
           <label>
-            Note
+            <span data-i18n="noteLabel">Note</span>
             <input id="activityNote" name="activityNote" type="text" maxlength="90" placeholder="Sofa cushions rearranged">
           </label>
 
-          <button type="submit">Add Entry</button>
+          <button type="submit" data-i18n="addEntryButton">Add Entry</button>
         </form>
 
         <div class="actions">
-          <button id="showActive" type="button" class="is-active">Active Pet</button>
-          <button id="showAll" type="button">All Pets</button>
-          <button id="resetData" type="button">Reset</button>
+          <button id="showActive" type="button" class="is-active" data-i18n="activePetButton">Active Pet</button>
+          <button id="showAll" type="button" data-i18n="allPetsButton">All Pets</button>
+          <button id="resetData" type="button" data-i18n="resetButton">Reset</button>
         </div>
       </section>
 
       <section class="timeline-section" aria-labelledby="timelineTitle">
         <div class="section-heading">
-          <p class="eyebrow">Latest clues</p>
-          <h2 id="timelineTitle">Timeline</h2>
+          <p class="eyebrow" data-i18n="timelineEyebrow">Latest clues</p>
+          <h2 id="timelineTitle" data-i18n="timelineTitle">Timeline</h2>
         </div>
         <ol id="timeline" class="timeline"></ol>
       </section>
@@ -119,5 +133,37 @@
       <span>Secret Life of Pets</span>
       <span>v93.1</span>
     </footer>
+
+    <dialog id="helpDialog" class="help-dialog" aria-labelledby="helpTitle">
+      <div class="help-dialog__top">
+        <div>
+          <p class="eyebrow" data-i18n="tutorialEyebrow">Tutorial</p>
+          <h2 id="helpTitle" data-i18n="tutorialTitle">How To Use It</h2>
+        </div>
+        <button id="closeHelp" class="icon-button" type="button" title="Close help">
+          <span aria-hidden="true">x</span>
+          <span class="visually-hidden" data-i18n="closeHelp">Close help</span>
+        </button>
+      </div>
+
+      <ol class="tutorial-list">
+        <li>
+          <strong data-i18n="tutorialOneTitle">Pick a dog</strong>
+          <span data-i18n="tutorialOneText">Use Olivia, Bruno, or Lola to switch the active profile.</span>
+        </li>
+        <li>
+          <strong data-i18n="tutorialTwoTitle">Check the status</strong>
+          <span data-i18n="tutorialTwoText">Review mood, energy, nap bank, clue score, and the daily routine.</span>
+        </li>
+        <li>
+          <strong data-i18n="tutorialThreeTitle">Add a clue</strong>
+          <span data-i18n="tutorialThreeText">Choose an activity, set intensity, add a note, and save it to the timeline.</span>
+        </li>
+        <li>
+          <strong data-i18n="tutorialFourTitle">Review history</strong>
+          <span data-i18n="tutorialFourText">Toggle between the active dog and all dogs, or reset to the starter entries.</span>
+        </li>
+      </ol>
+    </dialog>
   </body>
 </html>

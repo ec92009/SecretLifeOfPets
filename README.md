@@ -6,11 +6,13 @@ Live site: `https://ec92009.github.io/SecretLifeOfPets/`
 
 ## Features
 
-- Pet profile switcher for Clover, Miso, and Pip.
+- Pet profile switcher for Olivia, Bruno, and Lola.
 - Current status panel with mood, energy, nap bank, clue score, location, and routine.
 - Activity form for adding local timeline entries with type, intensity, and note.
 - Active-pet and all-pets timeline filters.
 - Local reset control that restores the seeded demo data.
+- Help button with a short in-app tutorial.
+- EN/SP/FR language switcher and Light/Dark theme toggle.
 - Hero artwork using the San Francisco skateboard-dogs image in `assets/skateboard-dogs-hero.jpg`.
 
 ## Run Locally
@@ -58,7 +60,7 @@ The public GitHub repository is `ec92009/SecretLifeOfPets`. GitHub Pages is enab
 
 ## Data And Assets
 
-- Activity data is stored locally in the browser under `localStorage` key `secret-life-of-pets:v1`.
-- `assets/skateboard-dogs-hero.jpg` is a user-provided hero image added for this project.
+- Activity data is stored locally in the browser under `localStorage` key `secret-life-of-pets:v2`.
+- `assets/skateboard-dogs-hero.jpg` is a user-provided hero image showing Olivia in front with Bruno behind her.
 - `assets/pets-apartment.png` is original generated bitmap artwork kept in the repo as an alternate project asset. It does not depict or reference franchise characters.
 - `SUMMARY.md` records the project handoff summary and current backlog.
