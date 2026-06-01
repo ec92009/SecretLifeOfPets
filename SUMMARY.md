@@ -15,7 +15,7 @@ Date: 2026-06-01
 
 - Live URL: `https://ec92009.github.io/SecretLifeOfPets/`
 - Repository: `https://github.com/ec92009/SecretLifeOfPets`
-- Current app behavior: pet switching, status metrics, routines, activity logging, timeline filtering, reset, and browser-local persistence.
+- Current app behavior: pet switching, top-right language/theme/version/help controls, status metrics, routines, activity logging, timeline filtering, reset, and browser-local persistence.
 - Runtime dependencies: none.
 - Validation command: `npm run check`
 - Deployment path: push `main`; GitHub Pages serves the repository root.

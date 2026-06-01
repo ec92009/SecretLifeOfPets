@@ -8,32 +8,33 @@
       name="description"
       content="A local pet activity dashboard for profiles, routines, and daily logs."
     >
-    <link rel="stylesheet" href="assets/styles.css?v=4">
-    <script type="module" src="src/app.js?v=4"></script>
+    <link rel="stylesheet" href="assets/styles.css?v=5">
+    <script type="module" src="src/app.js?v=5"></script>
   </head>
   <body>
     <header class="masthead">
+      <div class="masthead__utility" aria-label="Page options">
+        <div class="language-switcher" aria-label="Select language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false">SP</button>
+          <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+          <span data-i18n="themeDark">Dark</span>
+        </button>
+        <span class="version-badge" aria-label="Version 93.2">v93.2</span>
+        <button id="helpButton" class="help-button" type="button" title="Open help">
+          <span aria-hidden="true">?</span>
+          <span class="visually-hidden">Open help</span>
+        </button>
+      </div>
       <div class="masthead__copy">
         <p class="eyebrow" data-i18n="dashboardEyebrow">Household dashboard</p>
         <h1>Secret Life of Pets</h1>
         <p id="currentSummary" class="summary">
           Quiet house. Full report.
         </p>
-        <div class="masthead__tools">
-          <div id="petSwitcher" class="pet-switcher" aria-label="Select active pet"></div>
-          <div class="language-switcher" aria-label="Select language">
-            <button type="button" data-lang="en" aria-pressed="true">EN</button>
-            <button type="button" data-lang="es" aria-pressed="false">SP</button>
-            <button type="button" data-lang="fr" aria-pressed="false">FR</button>
-          </div>
-          <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
-            <span data-i18n="themeDark">Dark</span>
-          </button>
-          <button id="helpButton" class="help-button" type="button" title="Open help">
-            <span aria-hidden="true">?</span>
-            <span class="visually-hidden">Open help</span>
-          </button>
-        </div>
+        <div id="petSwitcher" class="pet-switcher" aria-label="Select active pet"></div>
       </div>
       <figure class="masthead__art">
         <img src="assets/skateboard-dogs-hero.jpg" alt="Photo of Olivia in front with Bruno just behind her on a San Francisco street">
@@ -131,7 +132,6 @@
 
     <footer class="site-footer">
       <span>Secret Life of Pets</span>
-      <span>v93.1</span>
     </footer>
 
     <dialog id="helpDialog" class="help-dialog" aria-labelledby="helpTitle">

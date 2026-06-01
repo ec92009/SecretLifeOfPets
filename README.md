@@ -11,8 +11,7 @@ Live site: `https://ec92009.github.io/SecretLifeOfPets/`
 - Activity form for adding local timeline entries with type, intensity, and note.
 - Active-pet and all-pets timeline filters.
 - Local reset control that restores the seeded demo data.
-- Help button with a short in-app tutorial.
-- EN/SP/FR language switcher and Light/Dark theme toggle.
+- Top-right utility bar with EN/SP/FR language switching, Light/Dark theme toggle, version badge, and help.
 - Hero artwork using the San Francisco skateboard-dogs image in `assets/skateboard-dogs-hero.jpg`.
 
 ## Run Locally

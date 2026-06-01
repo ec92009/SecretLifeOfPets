@@ -93,6 +93,15 @@ select:focus-visible {
   padding: clamp(1.25rem, 3vw, 2.5rem);
 }
 
+.masthead__utility {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-self: end;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
 .masthead__copy {
   display: flex;
   min-height: 520px;
@@ -150,17 +159,11 @@ h3 {
   gap: 0.65rem;
 }
 
-.masthead__tools {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
 .pet-switcher button,
 .actions button,
 .language-switcher button,
-.theme-toggle {
+.theme-toggle,
+.version-badge {
   background: var(--surface);
   color: var(--ink);
   border-color: var(--line);
@@ -197,6 +200,17 @@ h3 {
 
 .theme-toggle {
   min-width: 82px;
+}
+
+.version-badge {
+  display: inline-grid;
+  min-height: 44px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 900;
 }
 
 .help-button,
@@ -557,8 +571,24 @@ input[type="range"] {
     grid-template-columns: 1fr;
   }
 
-  .masthead__tools {
-    align-items: flex-start;
+  .masthead__utility {
+    justify-self: stretch;
+    justify-content: end;
+    gap: 0.5rem;
+  }
+
+  .language-switcher button {
+    min-width: 42px;
+    padding-inline: 0.55rem;
+  }
+
+  .theme-toggle {
+    min-width: 74px;
+  }
+
+  .version-badge {
+    min-width: 54px;
+    padding-inline: 0.55rem;
   }
 
   .section-heading {
