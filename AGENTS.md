@@ -17,6 +17,5 @@ Project-level working preferences for `/Users/ecohen/Dev/SecretLifeOfPets`.
 
 ## Editing Preferences
 
-- Prefer small, direct edits.
 - Keep generated or borrowed assets documented in `README.md`.
 - Keep runtime code dependency-free unless a feature clearly needs a package.
